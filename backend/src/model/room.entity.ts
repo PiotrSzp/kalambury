@@ -1,7 +1,7 @@
 import { Entity, Column, OneToMany } from 'typeorm';
 import { BaseEntity } from './base.entity';
 import { CardEntity } from './card.entity';
-import {PlayerEntity} from './player.entity';
+import { PlayerEntity } from './player.entity';
 
 @Entity({ name: 'room' })
 export class RoomEntity extends BaseEntity {

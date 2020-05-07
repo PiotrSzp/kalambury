@@ -16,16 +16,26 @@ const run = async () => {
   const roomService = new RoomService(connection.getRepository(RoomEntity));
 
   // TODO: add roomDto
-  const seedRoomDto: RoomEntity = {
+  const seedRoomDto1: RoomEntity = {
     id: '123e4567-e89b-12d3-a456-426655440000',
-    name: 'Seed Room Name',
+    name: 'Seed Room No 1',
     pin: '1234',
     createDateTime: new Date(),
     cards: [],
     players: [],
   };
 
-  const seedRoom = await roomService.create(seedRoomDto);
+  const seedRoomDto2: RoomEntity = {
+    id: '123e4567-e89b-12d3-a456-426655440040',
+    name: 'Seed Room No 2',
+    pin: '1234',
+    createDateTime: new Date(),
+    cards: [],
+    players: [],
+  };
+
+  const seedRoom1 = await roomService.create(seedRoomDto1);
+  const seedRoom2 = await roomService.create(seedRoomDto2);
 
   const seedId = Date.now()
     .toString()
@@ -41,7 +51,7 @@ const run = async () => {
     const cardDto = CardDto.from({
       value: `Seeded value no ${i}`,
     });
-    const cardPromise = cardService.create(cardDto, seedRoom);
+    const cardPromise = cardService.create(cardDto, seedRoom1);
 
     work.push(cardPromise);
   }
