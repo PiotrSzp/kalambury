@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
+import { CircularProgress } from "@material-ui/core";
 
 const StyledList = styled.ul`
   border: 1px solid navy;
@@ -14,9 +15,9 @@ const StyledListEl = styled.li`
   text-align: left;
   padding: 5px;
   border-bottom: 1px dashed darkgray;
-  
+
   :last-child {
-  border-bottom: none;
+    border-bottom: none;
   }
 `;
 
@@ -58,12 +59,12 @@ const List: React.FC = () => {
     const getListAsync = async () => {
       await getList();
     };
-    getListAsync().then();
+    getListAsync();
   }, []);
 
   if (error) return <p>Nie załadowano.</p>;
 
-  return loading ? <p>Ładuję...</p> : createListElement(list);
+  return loading ? <CircularProgress /> : createListElement(list);
 };
 
 export default List;

@@ -9,7 +9,7 @@ const StyledAddBoxRoundedIcon = styled(AddBoxRoundedIcon).attrs(() => {})`
 
 const AddButton: React.FC = props => {
   return (
-    <Button component={"button"} variant={"outlined"}>
+    <Button component={"button"} variant={"outlined"} >
       <StyledAddBoxRoundedIcon sibling={props.children} />
       {props.children}
     </Button>

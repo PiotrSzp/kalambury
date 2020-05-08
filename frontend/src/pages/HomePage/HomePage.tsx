@@ -1,24 +1,12 @@
-import React from "react";
-import styled from "styled-components";
+import React, { FC, Fragment } from "react";
 import { Link } from "react-router-dom";
 import AddButton from "../../components/buttons/AddButton/AddButton";
 import List from "../../components/lists/List/List";
+import { MainHeader, SecondaryHeader } from "../../layout/headers";
+import { StyledSection } from "../../layout/wrappers";
 
-const MainHeader = styled.h1`
-  text-transform: uppercase;
-  text-align: center;
-`;
-const SecondaryHeader = styled.h2`
-  text-transform: uppercase;
-  text-align: center;
-`;
-
-const StyledSection = styled.section`
-  text-align: center;
-`;
-
-const HomePage: React.FC = () => (
-  <>
+const HomePage: FC = () => (
+  <Fragment data-testid="HomePage">
     <header>
       <MainHeader>kalambury</MainHeader>
     </header>
@@ -29,7 +17,7 @@ const HomePage: React.FC = () => (
       <SecondaryHeader>DOSTĘPNE STOŁY</SecondaryHeader>
       <List />
     </StyledSection>
-  </>
+  </Fragment>
 );
 
 export default HomePage;
