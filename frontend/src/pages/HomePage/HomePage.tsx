@@ -1,4 +1,4 @@
-import React, { FC, Fragment } from "react";
+import React, { FC } from "react";
 import { Link } from "react-router-dom";
 import AddButton from "../../components/buttons/AddButton/AddButton";
 import List from "../../components/lists/List/List";
@@ -6,7 +6,7 @@ import { MainHeader, SecondaryHeader } from "../../layout/headers";
 import { StyledSection } from "../../layout/wrappers";
 
 const HomePage: FC = () => (
-  <Fragment data-testid="HomePage">
+  <div data-testid="HomePage">
     <header>
       <MainHeader>kalambury</MainHeader>
     </header>
@@ -17,7 +17,7 @@ const HomePage: FC = () => (
       <SecondaryHeader>DOSTĘPNE STOŁY</SecondaryHeader>
       <List />
     </StyledSection>
-  </Fragment>
+  </div>
 );
 
 export default HomePage;

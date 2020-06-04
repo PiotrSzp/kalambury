@@ -13,4 +13,6 @@ export class PlayerService {
     public async getAll(): Promise<PlayerEntity[]> {
         return await this.playerRepository.find();
     }
+
+
 }

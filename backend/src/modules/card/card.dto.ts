@@ -20,7 +20,6 @@ export class CardDto implements Readonly<CardDto> {
     const card = new CardDto();
     card.id = dto.id;
     card.value = dto.value;
-    card.value = dto.value;
     card.room = dto.room;
     return card;
   }

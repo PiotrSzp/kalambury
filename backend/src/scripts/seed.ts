@@ -5,6 +5,8 @@ import { configService } from '../config/config.service';
 import { CardService } from '../modules/card/card.service';
 import { CardDto } from '../modules/card/card.dto';
 import { RoomService } from '../modules/room/room.service';
+import { GameState } from '../consts';
+import {RoomDto} from '../modules/room/room.dto';
 
 const run = async () => {
   const opt = {
@@ -20,22 +22,26 @@ const run = async () => {
     id: '123e4567-e89b-12d3-a456-426655440000',
     name: 'Seed Room No 1',
     pin: '1234',
+    config: '',
     createDateTime: new Date(),
     cards: [],
     players: [],
+    state: GameState.SETUP,
   };
 
   const seedRoomDto2: RoomEntity = {
     id: '123e4567-e89b-12d3-a456-426655440040',
     name: 'Seed Room No 2',
     pin: '1234',
+    config: '',
     createDateTime: new Date(),
     cards: [],
     players: [],
+    state: GameState.SETUP,
   };
 
-  const seedRoom1 = await roomService.create(seedRoomDto1);
-  const seedRoom2 = await roomService.create(seedRoomDto2);
+  const seedRoom1 = await roomService.create(RoomDto.fromEntity(seedRoomDto1));
+  const seedRoom2 = await roomService.create(RoomDto.fromEntity(seedRoomDto2));
 
   const seedId = Date.now()
     .toString()

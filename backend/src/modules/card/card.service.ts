@@ -3,6 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { CardEntity } from '../../model/card.entity';
 import { CardDto } from './card.dto';
+import {RoomDto} from '../room/room.dto';
 
 @Injectable()
 export class CardService {
